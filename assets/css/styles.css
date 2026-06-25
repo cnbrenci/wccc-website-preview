@@ -327,7 +327,7 @@ table.data td.price { font-weight:800; color: var(--teal-deep); white-space:nowr
 .site-footer ul { list-style:none; margin:0; padding:0; display:grid; gap:.55rem; }
 .site-footer ul a { color:#cfd7dd; text-decoration:none; }
 .site-footer ul a:hover { color:#fff; text-decoration:underline; }
-.footer-brand img { height: 54px; background:#fff; border-radius:12px; padding:8px 10px; margin-bottom: .9rem; }
+.footer-brand img { height: auto; width: 200px; max-width: 100%; background:#fff; border-radius:14px; padding:14px 16px; margin-bottom: 1.1rem; }
 .footer-brand p { color:#aeb9c1; font-size:.95rem; max-width: 34ch; }
 .land-ack { border-top:1px solid #33414c; margin-top:2.4rem; padding-top:1.6rem; color:#aeb9c1; font-size:.9rem; display:grid; gap:.6rem; }
 .land-ack a { color:#fff; }
