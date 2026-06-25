@@ -1,0 +1,11 @@
+# Editor / harness
+.claude/
+
+# OS junk
+Thumbs.db
+ehthumbs.db
+.DS_Store
+desktop.ini
+
+# Temp/scratch image artifacts (not used by the site)
+assets/images/_*

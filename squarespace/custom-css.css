@@ -1,0 +1,61 @@
+/* ============================================================
+   WCCC — Squarespace Custom CSS
+   Paste into: Website → Website Tools → Custom CSS
+   (Squarespace 7.1 / Fluid Engine)
+
+   Do Site Styles FIRST (fonts + color palette). This file only
+   fine-tunes things Site Styles can't fully control.
+   Staff never need to touch this — it's set once.
+   ============================================================ */
+
+:root{
+  --wccc-teal:#0E7363;
+  --wccc-teal-deep:#0A5749;
+  --wccc-ink:#1F2933;
+  --wccc-line:#E6DED0;
+  --wccc-radius:18px;
+  --wccc-radius-lg:28px;
+}
+
+/* --- Pill buttons (back-up for Site Styles button shape) --- */
+.sqs-block-button-element,
+.sqs-button-element--primary{
+  border-radius:999px !important;
+  font-weight:800 !important;
+  letter-spacing:.01em;
+}
+
+/* --- Rounded images with a soft shadow (the Comet look) ---
+   NOTE: this rounds ALL content images. If your logo or an icon
+   shouldn't be rounded, place it in a spot this doesn't hit, or
+   remove this block and round images individually in Site Styles. */
+.sqs-block-image .sqs-block-image-figure img,
+.fe-block .sqs-image img{
+  border-radius:var(--wccc-radius-lg);
+}
+
+/* --- Tighter, friendlier headings --- */
+h1,h2,h3{ letter-spacing:-0.01em; }
+
+/* --- Link underline offset for readability --- */
+a{ text-underline-offset:3px; }
+
+/* --- Stronger focus ring for keyboard users (accessibility) --- */
+a:focus-visible,
+button:focus-visible,
+.sqs-block-button-element:focus-visible{
+  outline:3px solid #15679D;
+  outline-offset:3px;
+}
+
+/* --- Optional: a reusable "eyebrow" label.
+   In a Squarespace text block, mark a small line as Heading 4,
+   then this restyles every H4 into the coral uppercase label.
+   Remove if you'd rather use H4 normally. --- */
+h4{
+  color:#9A330A;            /* AA-compliant coral on light bg */
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:.8rem;
+  font-weight:800;
+}

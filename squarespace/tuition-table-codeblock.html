@@ -1,0 +1,53 @@
+<!-- ============================================================
+     WCCC Tuition Table — Squarespace CODE BLOCK
+     Add a "Code" block to the Enrollment page and paste ALL of this.
+     To update next year: change the dates in the <caption> and the
+     $ amounts in the rows marked "EDIT PRICES". Nothing else.
+     ============================================================ -->
+<style>
+.wccc-tuition{
+  --ink:#1F2933; --teal:#0A5749; --line:#E6DED0; --sand:#F3ECDF; --mute:#5B6770;
+  font-family:'Nunito Sans',-apple-system,'Segoe UI',Roboto,sans-serif;
+  max-width:860px; margin:0 auto; color:var(--ink);
+}
+.wccc-tuition .scroll{ overflow-x:auto; border:1px solid var(--line); border-radius:16px; }
+.wccc-tuition table{ border-collapse:collapse; width:100%; min-width:520px; background:#fff; }
+.wccc-tuition caption{ caption-side:top; text-align:left; padding:.4rem .2rem .7rem; color:var(--mute); font-size:.85rem; }
+.wccc-tuition th,.wccc-tuition td{ padding:.85rem 1.1rem; text-align:left; border-bottom:1px solid var(--line); }
+.wccc-tuition thead th{ background:var(--sand); font-size:.78rem; letter-spacing:.05em; text-transform:uppercase; font-weight:800; }
+.wccc-tuition tbody th{ font-weight:800; }
+.wccc-tuition td{ font-weight:800; color:var(--teal); white-space:nowrap; }
+.wccc-tuition tbody tr:last-child td,.wccc-tuition tbody tr:last-child th{ border-bottom:0; }
+.wccc-tuition .dot{ display:inline-block; width:.7rem; height:.7rem; border-radius:50%; margin-right:.5rem; vertical-align:middle; }
+.wccc-tuition .stage{ font-weight:600; color:var(--mute); }
+.wccc-tuition .note{ margin-top:1rem; color:var(--mute); font-size:.92rem; }
+</style>
+
+<div class="wccc-tuition">
+  <div class="scroll">
+    <table>
+      <caption>Monthly tuition by classroom and schedule &middot; July 1, 2026 – June 30, 2027</caption>
+      <thead>
+        <tr>
+          <th scope="col">Classroom</th>
+          <th scope="col">2 Days (T/Th)</th>
+          <th scope="col">3 Days (M/W/F)</th>
+          <th scope="col">5 Days (M–F)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- EDIT PRICES: Cloud -->
+        <tr><th scope="row"><span class="dot" style="background:#38A8DF"></span>Cloud <span class="stage">&middot; Infant</span></th><td>$2,265</td><td>$2,770</td><td>$3,770</td></tr>
+        <!-- EDIT PRICES: Sunshine -->
+        <tr><th scope="row"><span class="dot" style="background:#F4C41F"></span>Sunshine <span class="stage">&middot; Waddler</span></th><td>$2,050</td><td>$2,395</td><td>$3,405</td></tr>
+        <!-- EDIT PRICES: Rainbow -->
+        <tr><th scope="row"><span class="dot" style="background:#F0663F"></span>Rainbow <span class="stage">&middot; Toddler</span></th><td>$1,890</td><td>$2,110</td><td>$3,125</td></tr>
+        <!-- EDIT PRICES: Star -->
+        <tr><th scope="row"><span class="dot" style="background:#2BB6A3"></span>Star <span class="stage">&middot; Younger Preschool</span></th><td>$1,675</td><td>$1,940</td><td>$2,725</td></tr>
+        <!-- EDIT PRICES: Rocket -->
+        <tr><th scope="row"><span class="dot" style="background:#7A4EA3"></span>Rocket <span class="stage">&middot; Older Preschool</span></th><td>$1,665</td><td>$1,920</td><td>$2,700</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">There is a $79.50 non-refundable fee to join the waiting list, waived for families who qualify for a subsidy.</p>
+</div>
