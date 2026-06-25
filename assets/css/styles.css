@@ -136,10 +136,16 @@ p  { margin: 0 0 1.1em; }
   display: flex; align-items: center; gap: 1rem;
   padding: .7rem 0;
 }
-.brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; margin-right: auto; }
-.brand img { height: 46px; width: auto; }
-.brand b { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 1.05rem; line-height: 1.05; }
-.brand span { display:block; font-family: var(--font-body); font-weight:700; font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color: var(--ink-mute); }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; margin-right: auto; }
+.brand-mark { height: 44px; width: auto; flex: none; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.04; }
+.brand-text strong { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 1.12rem; letter-spacing: -.01em; }
+.brand-text small { font-family: var(--font-body); font-weight: 700; font-size: .58rem; letter-spacing: .11em; text-transform: uppercase; color: var(--ink-mute); margin-top: 1px; }
+@media (max-width: 480px){
+  .brand-mark { height: 38px; }
+  .brand-text strong { font-size: 1rem; }
+  .brand-text small { display: none; }
+}
 .nav-links { display: flex; align-items: center; gap: .25rem; list-style: none; margin: 0; padding: 0; }
 .nav-links a {
   display: inline-block; text-decoration: none;
