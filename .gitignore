@@ -9,3 +9,9 @@ desktop.ini
 
 # Temp/scratch image artifacts (not used by the site)
 assets/images/_*
+
+# Homepage design mockups (not for deploy)
+mock-*.html
+mock_gen.py
+assets/css/playful.css
+__pycache__/
