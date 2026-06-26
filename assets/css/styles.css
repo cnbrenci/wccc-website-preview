@@ -388,6 +388,7 @@ hr.soft { border:0; border-top:1px solid var(--line); margin: 2.5rem 0; }
 .pico.blob-coral { background: #fbe3d8; color: var(--coral-deep); }
 .pico.blob-gold  { background: #fbeec2; color: #7a5a06; }
 .pico.blob-plum  { background: #ece1f4; color: #5a3782; }
+.pico.blob-rose  { background: #f7dfea; color: #9c2f63; }
 
 /* playful feature card (organic, lightly tilted "taped note" feel) */
 .pcard {
