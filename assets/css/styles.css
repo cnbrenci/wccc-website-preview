@@ -118,8 +118,8 @@ p  { margin: 0 0 1.1em; }
 .btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 .btn--primary { background: var(--teal); color: #fff; }
 .btn--primary:hover { background: var(--teal-deep); color: #fff; box-shadow: var(--shadow-sm); }
-.btn--coral { background: var(--coral); color: #fff; }
-.btn--coral:hover { background: var(--coral-deep); color: #fff; box-shadow: var(--shadow-sm); }
+.btn--blue { background: var(--blue); color: #fff; }
+.btn--blue:hover { background: var(--blue-deep); color: #fff; box-shadow: var(--shadow-sm); }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
 .btn--ghost:hover { background: var(--ink); color: #fff; }
 .btn--light { background: #fff; color: var(--ink); border-color: #fff; }
