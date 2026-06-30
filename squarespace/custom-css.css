@@ -6,6 +6,9 @@
    Do Site Styles FIRST (fonts + color palette). This file only
    fine-tunes things Site Styles can't fully control.
    Staff never need to touch this — it's set once.
+
+   Button colors are set in Site Styles, not here:
+     Primary = green #0E7363 · Secondary = blue #15679D (NOT coral).
    ============================================================ */
 
 :root{
