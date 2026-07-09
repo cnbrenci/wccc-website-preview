@@ -19,31 +19,85 @@ Principle: **content** lives in native blocks (staff edit these); **styling** li
 - Body / paragraph → **Nunito Sans** (regular 400, bold 700/800)
 - Buttons → Nunito Sans, bold
 
-### Buttons
-- Shape → **Pill**
-- **Primary** button → green fill `#0E7363`, white text (hover `#0A5749`)
-- **Secondary** button → blue fill `#15679D`, white text (hover `#0F4D77`)
-- *(We recently changed the secondary button from coral/red to blue — make sure the secondary style is blue, not red.)*
+### Buttons (shape only)
+- Shape → **Pill**, bold text.
+- **Button _colors_ are set inside each color theme** (see below), not here — Squarespace ties button color to the section's color theme.
 
-### Colors (build a palette from these)
-| Role | Hex |
+### Colors — Squarespace's model (5 base colors → themes → per-section)
+
+Squarespace works in three steps, so set it up in three steps:
+
+#### Step A — Set the 5 base palette colors
+**Site Styles → Colors → Edit Palette.** Enter these five:
+
+| Slot | Color | Hex |
+|---|---|---|
+| 1 | White | `#FFFFFF` |
+| 2 | Ink (near-black) | `#1C2630` |
+| 3 | Green (primary) | `#0E7363` |
+| 4 | Blue (secondary) | `#15679D` |
+| 5 | Cream | `#FAF6EE` |
+
+Squarespace auto-generates 10 themes from these. **Don't worry about how the auto-generated themes look** — you'll override the specifics in Step B.
+
+#### Step B — Customize the themes you'll actually use
+**Site Styles → Colors → click a theme → set each item.** You need **one dark theme** and a handful of **light themes** that differ only by background color.
+
+**Every LIGHT theme uses these same settings** — only the Section Background changes:
+
+| Theme item | Value |
 |---|---|
-| Text / ink | `#1F2933` |
-| Primary (green — buttons, links) | `#0E7363` (hover `#0A5749`) |
-| Secondary (blue) | `#15679D` (hover `#0F4D77`) |
-| Accent coral *(small accents only — eyebrow labels, dots, icon tiles)* | `#C2410C` / text `#9A330A` |
-| Accent plum | `#7A4EA3` |
-| Light background — cream | `#FAF6EE` |
-| Light background — sand | `#F3ECDF` |
-| Light background — sage | `#EEF3EA` |
-| Light background — mist | `#EAF1F5` |
-| Light background — blush | `#F7EEF0` |
-| Dark sections / footer | `#1C2630` |
+| Section Background | *(per theme — table below)* |
+| Heading (all sizes) | `#1F2933` |
+| Paragraph (all sizes) | `#1F2933` |
+| Primary button — fill / text | `#0E7363` / `#FFFFFF` |
+| Secondary button — fill / text | `#15679D` / `#FFFFFF` |
+| Links | `#0A5749` |
+| Text Highlight | `#0E7363` |
+| Section Divider / Stroke | `#E6DED0` |
+| Background Overlay, Inset Border | none |
 
-**Bright accents — DECORATION ONLY (icon blobs, dots, sparkles). Never as text on white:**
-teal `#2BB6A3` · blue `#38A8DF` · gold `#F4C41F` · coral `#F0663F` · rose `#9C2F63` on `#F7DFEA`
+Then give each light theme its own **Section Background**. You only *need* White + Cream + Sage; add the others where a section calls for it:
 
-> ♿ Accessibility: keep dark text on light backgrounds (and white text on green/blue/dark). Don't let an auto-generated section theme put a light bright color as text on white — that's what failed WCAG on the old site.
+| Assign to a theme slot | Section Background | Used for |
+|---|---|---|
+| "White" (e.g. Lightest 1) | `#FFFFFF` | default content sections |
+| "Cream" (e.g. Lightest 2) | `#FAF6EE` | page heros, alternating rows |
+| "Sage" (e.g. Light 1) | `#EEF3EA` | highlight / "at a glance" bands |
+| "Mist" (e.g. Light 2) | `#EAF1F5` | optional blue-tint band |
+| "Blush" (e.g. Bright 2) | `#F7EEF0` | optional (kitchen allergy section) |
+| "Sand" (e.g. Bright 1) | `#F3ECDF` | optional warm band |
+
+> Since you fully control each theme, it's fine to repurpose a "Bright" slot as a soft tint — the slot names don't matter, only the values you set.
+
+**The DARK theme** (assign to e.g. Darkest 1) — for CTA sections and the footer:
+
+| Theme item | Value |
+|---|---|
+| Section Background | `#1C2630` |
+| Heading (all sizes) | `#FFFFFF` |
+| Paragraph (all sizes) | `#D6DDE2` |
+| Primary button — fill / text | `#FFFFFF` / `#1C2630` |
+| Secondary button — fill / text | `#15679D` / `#FFFFFF` |
+| Links | `#FFFFFF` |
+| Section Divider / Stroke | `#33414C` |
+
+#### Step C — Assign a theme to each section
+Select a section → **Colors** → pick the theme:
+
+| Section | Theme |
+|---|---|
+| Page hero (eyebrow + H1 + lead) | Cream |
+| Content rows | alternate White ↔ Cream (or White ↔ Sage) |
+| "At a glance" / ratios / highlight bands | Sage |
+| CTA bands ("Come see us in person", etc.) | **Dark** |
+| Footer | **Dark** |
+
+> ♿ Accessibility: these recipes keep dark text on light backgrounds and white text on dark — all WCAG AA. When editing a theme, never leave a Heading/Paragraph set to a light or bright color on a light background (that's what failed on the old site).
+
+> 🎨 The **bright decorative hues** (teal `#2BB6A3`, blue `#38A8DF`, gold `#F4C41F`, coral `#F0663F`, rose `#9C2F63`) and the **coral eyebrow accent** (`#9A330A`) live *inside* the homepage code block and your uploaded icons — they are **not** section themes, so you don't need palette slots for them.
+
+> **Note:** the homepage (Option B code block, Section 5) carries its own colors internally, so these themes mainly drive the **interior pages**.
 
 ### Images
 - Image corners → **Rounded** (~18–28px)
@@ -67,7 +121,7 @@ Rebuild each with standard sections:
 - **Page hero:** a cream-background section with an eyebrow (small H4), an H1, and a lead paragraph.
 - **Two-column rows:** alternating image/text (image left, then flip). Use photos from `assets/images/`.
 - **Stat / value / icon rows:** multi-column sections with an emoji or uploaded icon + heading + short text.
-- **CTA bands:** a section with dark background `#1C2630`, white heading, and 2 buttons (light + blue).
+- **CTA bands:** a section set to the **Dark** color theme (§1 Step C), white heading, and 2 buttons.
 - **Footer:** Squarespace footer with the logo, link columns, contact info, and the land-acknowledgement text.
 
 Crank up **section top/bottom padding** — the generous whitespace is most of the feel.
