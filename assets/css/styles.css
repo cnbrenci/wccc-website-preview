@@ -62,7 +62,7 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; height: auto; display: block; }
+img { max-width: 100%; height: auto; display: block; border: 0; }
 a { color: var(--teal-deep); text-underline-offset: 3px; }
 a:hover { color: var(--coral-deep); }
 
@@ -82,8 +82,8 @@ p  { margin: 0 0 1.1em; }
 
 /* ---------------- Layout helpers ---------------- */
 .wrap { width: min(100% - 2.6rem, var(--maxw)); margin-inline: auto; }
-.section { padding: clamp(3.5rem, 8vw, 7rem) 0; }
-.section--tight { padding: clamp(2.5rem, 5vw, 4rem) 0; }
+.section { padding: clamp(3.5rem, 8vw, 7rem) 0; background: transparent; }
+.section--tight { padding: clamp(2.5rem, 5vw, 4rem) 0; background: transparent; }
 .bg-cream { background: var(--cream); }
 .bg-sand  { background: var(--sand); }
 .bg-sage  { background: var(--sage); }

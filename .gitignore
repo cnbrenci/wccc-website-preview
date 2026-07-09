@@ -15,3 +15,5 @@ mock-*.html
 mock_gen.py
 assets/css/playful.css
 __pycache__/
+squarespace_gen.py
+_sqtest*.html

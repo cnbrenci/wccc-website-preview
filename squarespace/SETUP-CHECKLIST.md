@@ -97,12 +97,19 @@ Rebuild with native sections and **drop/replace the custom flourishes**:
 - Testimonials → native quote/text cards.
 Result: looks close, fully staff-editable, but loses the hand-drawn personality.
 
-### Option B — Self-contained code-block homepage (most faithful)
-Put the real homepage markup + scoped CSS into **one Code block** on a blank homepage. Pixel-matches the preview (hero, squiggles, hand-drawn icons, ribbon). Trade-off: edits to that page (e.g. a new testimonial) mean editing HTML inside the code block, not point-and-click. The homepage changes rarely, so this is often an acceptable trade.
+### Option B — Self-contained code-block homepage (most faithful) ✅ ready to use
+The whole homepage is prepared for you in **`homepage-codeblock.html`**. It pixel-matches the preview (immersive hero, squiggles, hand-drawn icons, ribbon stats) and is fully self-contained — all CSS is scoped under a `.wh` wrapper so it can't collide with Squarespace, and the hand-drawn icon filter is embedded (no Code Injection needed).
 
-> **I can generate the Option B code block(s) for you** from the current site — just ask. (It needs a small `<filter id="sketch">` SVG snippet added via Code Injection → Footer for the hand-drawn icon texture; I'll include that too.)
+**To use it:**
+1. Edit the homepage → add a **section**, set it to **full width** with **zero padding** (so the design can span edge-to-edge).
+2. Add a single **Code block** to that section.
+3. Open `homepage-codeblock.html`, copy **everything**, and paste it into the Code block. Save.
+4. **View it on the live/preview site, not just the editor** — Squarespace's editor sometimes doesn't fully render code blocks.
+5. **Images:** it currently loads images from the preview site so it works immediately. For a permanent site, upload the photos to Squarespace and replace every `https://www.cassibrenci.dev/wccc-website-preview/assets/images/` with your Squarespace image URL (find-and-replace inside the block).
 
-**Recommended:** interior pages native (Section 3) + homepage via **Option B** if you want it to match the preview, or **Option A** if staff will frequently rewrite the homepage.
+**Editing content later:** the text (headings, paragraphs, the four testimonials) lives in the markup below the `</style>` line — search for the words you want to change. Not point-and-click, but the homepage changes rarely.
+
+**Recommended:** interior pages native (Section 3) + homepage via **Option B** (`homepage-codeblock.html`). Use **Option A** instead only if staff will frequently rewrite the homepage themselves.
 
 ---
 
