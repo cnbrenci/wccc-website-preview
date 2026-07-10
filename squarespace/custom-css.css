@@ -78,7 +78,11 @@ button:focus-visible,
 .header-nav-item--active a{
   background-color:#EEF3EA;        /* sage */
   color:#0A5749 !important;        /* teal-deep */
+  text-decoration:none !important; /* remove Squarespace's default active underline */
+  border-bottom:0 !important;      /* in case the template uses a border instead */
 }
+/* belt-and-suspenders: hide an underline drawn as a pseudo-element */
+.header-nav-item--active a:after{ display:none !important; }
 /* Mobile overlay menu: highlight the current page (optional) */
 .header-menu-nav-item--active a{ color:#0A5749 !important; }
 
