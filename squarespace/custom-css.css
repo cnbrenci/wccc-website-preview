@@ -51,11 +51,11 @@ button:focus-visible,
   outline-offset:3px;
 }
 
-/* --- Optional: a reusable "eyebrow" label.
-   In a Squarespace text block, mark a small line as Heading 4,
-   then this restyles every H4 into the coral uppercase label.
-   Remove if you'd rather use H4 normally. --- */
-h4{
+/* --- Optional: a reusable "eyebrow" label for PAGE CONTENT only.
+   In a page text block, mark a small line as Heading 4 to get the
+   coral uppercase label. Scoped to #sections (the main content area)
+   so it does NOT affect the footer or header headings. --- */
+#sections h4{
   color:#9A330A;            /* AA-compliant coral on light bg */
   text-transform:uppercase;
   letter-spacing:.14em;
