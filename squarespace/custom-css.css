@@ -81,3 +81,29 @@ h4{
 }
 /* Mobile overlay menu: highlight the current page (optional) */
 .header-menu-nav-item--active a{ color:#0A5749 !important; }
+
+/* --- Button hover colors (Squarespace has no hover-color setting in its UI) ---
+   Primary (green) -> darker green; Secondary (blue) -> darker blue.
+   If hover doesn't change, right-click a button -> Inspect and confirm the
+   variant class; 7.1 uses .sqs-button-element--primary / --secondary / --tertiary. --- */
+.sqs-block-button-element,
+.sqs-button-element--primary,
+.sqs-button-element--secondary,
+.sqs-button-element--tertiary{
+  transition:background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+.sqs-button-element--primary:hover,
+.sqs-block-button-element--primary:hover{
+  background-color:#0A5749 !important;   /* green-deep */
+  color:#ffffff !important;
+}
+.sqs-button-element--secondary:hover,
+.sqs-block-button-element--secondary:hover{
+  background-color:#0F4D77 !important;   /* blue-deep */
+  color:#ffffff !important;
+}
+.sqs-button-element--tertiary:hover,
+.sqs-block-button-element--tertiary:hover{
+  background-color:#EEF3EA !important;   /* sage */
+  color:#1F2933 !important;              /* ink */
+}
