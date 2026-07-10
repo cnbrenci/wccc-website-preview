@@ -107,3 +107,17 @@ h4{
   background-color:#EEF3EA !important;   /* sage */
   color:#1F2933 !important;              /* ink */
 }
+
+/* --- Footer links: muted gray -> white + underline on hover (dark footer) ---
+   Squarespace 7.1 footer wrapper is #footer-sections. If your footer links
+   don't respond, inspect one and swap in the wrapper id/class you see. --- */
+#footer-sections a{
+  color:#CFD7DD;
+  text-decoration:none;
+  transition:color .15s ease;
+}
+#footer-sections a:hover{
+  color:#FFFFFF !important;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
