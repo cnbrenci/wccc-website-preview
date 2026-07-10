@@ -62,3 +62,22 @@ h4{
   font-size:.8rem;
   font-weight:800;
 }
+
+/* --- Nav: pill hover + active-page highlight (matches the site design) ---
+   Squarespace 7.1 selectors. If your template differs and this doesn't
+   apply, inspect a nav link to confirm the class names. --- */
+.header-nav-item a{
+  border-radius:999px;
+  padding:.4em .85em;
+  transition:background-color .15s ease, color .15s ease;
+}
+.header-nav-item a:hover{
+  background-color:#EEF3EA;        /* sage */
+  color:#1F2933 !important;        /* ink */
+}
+.header-nav-item--active a{
+  background-color:#EEF3EA;        /* sage */
+  color:#0A5749 !important;        /* teal-deep */
+}
+/* Mobile overlay menu: highlight the current page (optional) */
+.header-menu-nav-item--active a{ color:#0A5749 !important; }

@@ -17,3 +17,4 @@ assets/css/playful.css
 __pycache__/
 squarespace_gen.py
 _sqtest*.html
+make_lockup.py
