@@ -68,7 +68,9 @@ button:focus-visible,
    apply, inspect a nav link to confirm the class names. --- */
 .header-nav-item a{
   border-radius:999px;
-  padding:.4em .85em;
+  padding:.6em 1.1em;              /* roomier pill (was .4em .85em) */
+  display:inline-block;           /* so the vertical padding renders consistently */
+  line-height:1;
   transition:background-color .15s ease, color .15s ease;
 }
 .header-nav-item a:hover{
