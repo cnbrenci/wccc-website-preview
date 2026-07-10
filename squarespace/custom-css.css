@@ -78,11 +78,16 @@ button:focus-visible,
 .header-nav-item--active a{
   background-color:#EEF3EA;        /* sage */
   color:#0A5749 !important;        /* teal-deep */
-  text-decoration:none !important; /* remove Squarespace's default active underline */
-  border-bottom:0 !important;      /* in case the template uses a border instead */
 }
-/* belt-and-suspenders: hide an underline drawn as a pseudo-element */
-.header-nav-item--active a:after{ display:none !important; }
+/* Kill Squarespace's built-in nav underline so ONLY our pill shows.
+   The template draws it three ways (animated ::after + active text-decoration
+   + a background-image gradient); these selectors mirror Squarespace's own
+   specificity so they actually win. */
+.header-nav-item:not(.header-nav-item--folder) a::after{ display:none !important; }
+body:not(.header--menu-open) .header-nav-item--active > a:not(.header-nav-folder-title){
+  text-decoration:none !important;
+  background-image:none !important;
+}
 /* Mobile overlay menu: highlight the current page (optional) */
 .header-menu-nav-item--active a{ color:#0A5749 !important; }
 
