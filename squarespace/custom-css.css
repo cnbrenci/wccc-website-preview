@@ -135,16 +135,12 @@ body:not(.header--menu-open) .header-nav-item--active > a:not(.header-nav-folder
 }
 
 /* --- Green check-mark bullets for page-content lists ---
-   Turns normal bulleted lists in your PAGE CONTENT into the brand's green
-   check bullets (like the classroom "features" lists in the design).
-   Scoped to #sections so it never touches the footer/header.
-   Note: this applies to ALL bulleted lists in content — if you want plain
-   bullets somewhere, use a numbered list or a Code block for that list. --- */
-#sections ul{ list-style:none; padding-left:0; }
-#sections ul li{ position:relative; padding-left:1.9em; }
-#sections ul li::before{
-  content:"\2713";              /* ✓ */
-  position:absolute; left:0; top:0;
-  color:#0E7363;               /* brand green */
+   Squarespace draws its rich-text bullet as a ::before (content:"•") on each
+   list item's FIRST CHILD, not as a list marker. So instead of adding our own
+   bullet (which caused a doubled "✓•"), we recolor Squarespace's bullet into a
+   green check. Scoped to #sections; leaves numbered lists and the footer alone. */
+#sections ul[data-rte-list] li > *:first-child::before{
+  content:"\2713" !important;   /* ✓ */
+  color:#0E7363;                /* brand green */
   font-weight:900;
 }
