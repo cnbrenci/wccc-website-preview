@@ -128,12 +128,17 @@ Crank up **section top/bottom padding** — the generous whitespace is most of t
 
 ---
 
-## 4. The tuition table (Enrollment page)
+## 4. Tables (Code blocks) + the calendar image
 
-Squarespace has no good native table. Add a **Code block** on the Enrollment page and paste
-`tuition-table-codeblock.html`. It's self-contained (its own styles) and renders the three schedule columns.
+Squarespace has no good native table, so each table is a **Code block** — add one to the page and paste the whole file. Each is self-contained (its own scoped styles, so it can't be broken by the theme) and scrolls sideways on small phones.
 
-**Staff editing:** to update tuition each year, edit the dates in the `<caption>` line and the `$` amounts in the rows marked `<!-- EDIT PRICES -->`. That's the only spot on the interior pages that isn't pure point-and-click.
+| Page | Code block file | Renders |
+|---|---|---|
+| Enrollment | `tuition-table-codeblock.html` | tuition by classroom × 3 schedules |
+| Classrooms | `ratio-table-classrooms-codeblock.html` | room · ages · children · ratio |
+| Curriculum | `ratio-table-curriculum-codeblock.html` | classroom · stage · ratio |
+
+**Staff editing:** to update numbers later, edit the values inside the block's markup (for tuition, the rows marked `<!-- EDIT PRICES -->`). The colored dot before each room is set inline (`style="background:#RRGGBB"`).
 
 Also on the **Calendar page**: upload `calendar-2025-2026.png` as an Image block (re-export and swap it each school year).
 
