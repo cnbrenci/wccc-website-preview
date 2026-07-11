@@ -61,6 +61,7 @@ button:focus-visible,
   letter-spacing:.14em;
   font-size:.8rem;
   font-weight:800;
+  font-family: "nunito", sans-serif;
 }
 
 /* --- Nav: pill hover + active-page highlight (matches the site design) ---
@@ -131,4 +132,19 @@ body:not(.header--menu-open) .header-nav-item--active > a:not(.header-nav-folder
   color:#FFFFFF !important;
   text-decoration:underline;
   text-underline-offset:3px;
+}
+
+/* --- Green check-mark bullets for page-content lists ---
+   Turns normal bulleted lists in your PAGE CONTENT into the brand's green
+   check bullets (like the classroom "features" lists in the design).
+   Scoped to #sections so it never touches the footer/header.
+   Note: this applies to ALL bulleted lists in content — if you want plain
+   bullets somewhere, use a numbered list or a Code block for that list. --- */
+#sections ul{ list-style:none; padding-left:0; }
+#sections ul li{ position:relative; padding-left:1.9em; }
+#sections ul li::before{
+  content:"\2713";              /* ✓ */
+  position:absolute; left:0; top:0;
+  color:#0E7363;               /* brand green */
+  font-weight:900;
 }
