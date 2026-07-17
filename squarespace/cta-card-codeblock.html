@@ -1,0 +1,47 @@
+<!-- ============================================================
+     WCCC CTA card ("See our curriculum in action" style)
+     — Squarespace CODE BLOCK. Reusable on any page.
+     Put it in a section set to a LIGHT theme (so the dark card
+     floats on a light background, like the design).
+
+     EDIT: the heading, the two lines of text, the button labels,
+     and the two href="" links (point them at your Squarespace pages,
+     e.g. /enrollment and /classrooms).
+     ============================================================ -->
+<style>
+.wccc-cta{
+  --ink-bg:#1C2630; --blue:#15679D; --blue-deep:#0F4D77; --cream:#FAF6EE;
+  font-family:'Nunito Sans',-apple-system,'Segoe UI',Roboto,sans-serif;
+  max-width:1080px; margin:0 auto;
+  background:var(--ink-bg); color:#fff;
+  border-radius:28px; text-align:center;
+  padding:clamp(2.2rem,5vw,3.6rem);
+  box-sizing:border-box;
+}
+.wccc-cta h2{
+  font-family:'Fraunces',Georgia,serif; font-weight:600; color:#fff;
+  font-size:clamp(1.8rem,3.6vw,2.8rem); line-height:1.12; letter-spacing:-.01em;
+  margin:0 0 .5em;
+}
+.wccc-cta p{ color:#D6DDE2; max-width:56ch; margin:0 auto 0; font-size:1.0625rem; line-height:1.6; }
+.wccc-cta .row{ display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; margin-top:1.5rem; }
+.wccc-cta a.btn{
+  display:inline-block; text-decoration:none; cursor:pointer;
+  font-weight:800; font-size:1rem; line-height:1;
+  padding:.9rem 1.5rem; border-radius:999px;
+  border:2px solid transparent; transition:background-color .18s ease, color .18s ease;
+}
+.wccc-cta a.light{ background:#fff; color:var(--ink-bg); border-color:#fff; }
+.wccc-cta a.light:hover{ background:var(--cream); color:var(--ink-bg); }
+.wccc-cta a.blue{ background:var(--blue); color:#fff; }
+.wccc-cta a.blue:hover{ background:var(--blue-deep); color:#fff; }
+</style>
+
+<div class="wccc-cta">
+  <h2>See our curriculum in action</h2>
+  <p>The best way to understand emergent curriculum is to watch it unfold. Book a group tour and visit the classrooms.</p>
+  <div class="row">
+    <a class="btn light" href="/enrollment">Schedule a Tour</a>
+    <a class="btn blue" href="/classrooms">Explore Classrooms</a>
+  </div>
+</div>

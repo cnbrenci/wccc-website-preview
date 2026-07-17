@@ -121,7 +121,7 @@ Rebuild each with standard sections:
 - **Page hero:** a cream-background section with an eyebrow (small H4), an H1, and a lead paragraph.
 - **Two-column rows:** alternating image/text (image left, then flip). Use photos from `assets/images/`.
 - **Stat / value / icon rows:** multi-column sections with an emoji or uploaded icon + heading + short text.
-- **CTA bands:** a section set to the **Dark** color theme (§1 Step C), white heading, and 2 buttons.
+- **CTA bands:** two options — (a) a full-width section set to the **Dark** color theme (§1 Step C) with a white heading + 2 buttons (simplest), or (b) for the design's *floating rounded dark card*, use the `cta-card-codeblock.html` Code block on a light-themed section (Squarespace can't make a rounded inset card natively).
 - **Footer:** Squarespace footer with the logo, link columns, contact info, and the land-acknowledgement text.
 
 Crank up **section top/bottom padding** — the generous whitespace is most of the feel.
