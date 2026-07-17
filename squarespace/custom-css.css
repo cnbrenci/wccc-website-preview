@@ -5,124 +5,112 @@
 
    Do Site Styles FIRST (fonts + color palette). This file only
    fine-tunes things Site Styles can't fully control.
-   Staff never need to touch this — it's set once.
 
-   Button colors are set in Site Styles, not here:
-     Primary = green #0E7363 · Secondary = blue #15679D (NOT coral).
+   SPECIFICITY NOTE: Squarespace's newer "website component" blocks
+   ship their own high-specificity (sometimes !important) styles, so
+   plain rules get overridden. To win reliably WITHOUT relying only on
+   !important, each competitive rule is:
+     • prefixed with a stable wrapper ID  (#header / #page / #footer-sections)
+     • and/or has its key class doubled   (.x.x)
+   This raises specificity a lot. !important is kept ONLY where
+   Squarespace itself uses !important (you can't out-specify an
+   !important without your own !important).
+
+   Button colors are set in Site Styles: Primary green #0E7363,
+   Secondary blue #15679D (NOT coral).
    ============================================================ */
 
 :root{
-  --wccc-teal:#0E7363;
-  --wccc-teal-deep:#0A5749;
-  --wccc-ink:#1F2933;
-  --wccc-line:#E6DED0;
-  --wccc-radius:18px;
-  --wccc-radius-lg:28px;
+  --wccc-teal:#0E7363; --wccc-teal-deep:#0A5749; --wccc-ink:#1F2933;
+  --wccc-blue:#15679D; --wccc-blue-deep:#0F4D77; --wccc-sage:#EEF3EA;
+  --wccc-line:#E6DED0; --wccc-radius-lg:28px;
 }
 
 /* --- Pill buttons (back-up for Site Styles button shape) --- */
-.sqs-block-button-element,
-.sqs-button-element--primary{
-  border-radius:999px !important;
-  font-weight:800 !important;
+#page .sqs-block-button-element.sqs-block-button-element,
+#page .sqs-button-element--primary.sqs-button-element--primary,
+#page .sqs-button-element--secondary.sqs-button-element--secondary,
+#page .sqs-button-element--tertiary.sqs-button-element--tertiary{
+  border-radius:999px;
+  font-weight:800;
   letter-spacing:.01em;
+  transition:background-color .18s ease, color .18s ease, border-color .18s ease;
 }
 
-/* --- Rounded images with a soft shadow (the Comet look) ---
-   NOTE: this rounds ALL content images. If your logo or an icon
-   shouldn't be rounded, place it in a spot this doesn't hit, or
-   remove this block and round images individually in Site Styles. */
-.sqs-block-image .sqs-block-image-figure img,
-.fe-block .sqs-image img{
+/* --- Button HOVER colors (Squarespace has no hover-color setting) ---
+   Doubled class + #page ancestor to beat the button component styles.
+   Kept !important because the component sets hover with force. --- */
+#page .sqs-button-element--primary.sqs-button-element--primary:hover,
+#page .sqs-block-button-element--primary.sqs-block-button-element--primary:hover{
+  background-color:var(--wccc-teal-deep) !important;  /* green → deeper */
+  color:#fff !important;
+}
+#page .sqs-button-element--secondary.sqs-button-element--secondary:hover,
+#page .sqs-block-button-element--secondary.sqs-block-button-element--secondary:hover{
+  background-color:var(--wccc-blue-deep) !important;  /* blue → deeper */
+  color:#fff !important;
+}
+#page .sqs-button-element--tertiary.sqs-button-element--tertiary:hover,
+#page .sqs-block-button-element--tertiary.sqs-block-button-element--tertiary:hover{
+  background-color:var(--wccc-sage) !important;
+  color:var(--wccc-ink) !important;
+}
+
+/* --- Rounded images (the Comet look) --- */
+#page .sqs-block-image img,
+#page .fe-block .sqs-image img{
   border-radius:var(--wccc-radius-lg);
 }
 
-/* --- Tighter, friendlier headings --- */
-h1,h2,h3{ letter-spacing:-0.01em; }
+/* --- Tighter headings + readable link underline --- */
+#page h1, #page h2, #page h3{ letter-spacing:-0.01em; }
+#page a{ text-underline-offset:3px; }
 
-/* --- Link underline offset for readability --- */
-a{ text-underline-offset:3px; }
-
-/* --- Stronger focus ring for keyboard users (accessibility) --- */
-a:focus-visible,
-button:focus-visible,
-.sqs-block-button-element:focus-visible{
-  outline:3px solid #15679D;
+/* --- Focus ring for keyboard users (accessibility) --- */
+a:focus-visible, button:focus-visible, .sqs-block-button-element:focus-visible{
+  outline:3px solid var(--wccc-blue);
   outline-offset:3px;
 }
 
-/* --- Optional: a reusable "eyebrow" label for PAGE CONTENT only.
-   In a page text block, mark a small line as Heading 4 to get the
-   coral uppercase label. Scoped to #sections (the main content area)
-   so it does NOT affect the footer or header headings. --- */
-#sections h4{
-  color:#9A330A;            /* AA-compliant coral on light bg */
+/* --- "Eyebrow" label: mark a small line as Heading 4 in page content.
+   Scoped to #sections; does not touch footer/header headings. --- */
+#page #sections h4{
+  color:#9A330A;            /* AA coral on light bg */
   text-transform:uppercase;
   letter-spacing:.14em;
   font-size:.8rem;
   font-weight:800;
-  font-family: "nunito", sans-serif;
+  font-family:"nunito", sans-serif;
 }
 
-/* --- Nav: pill hover + active-page highlight (matches the site design) ---
-   Squarespace 7.1 selectors. If your template differs and this doesn't
-   apply, inspect a nav link to confirm the class names. --- */
-.header-nav-item a{
+/* --- Nav: roomy pill on hover + active page (in #header) --- */
+#header .header-nav-item a{
   border-radius:999px;
-  padding:.6em 1.1em;              /* roomier pill (was .4em .85em) */
-  display:inline-block;           /* so the vertical padding renders consistently */
+  padding:.6em 1.1em;
+  display:inline-block;
   line-height:1;
   transition:background-color .15s ease, color .15s ease;
 }
-.header-nav-item a:hover{
-  background-color:#EEF3EA;        /* sage */
-  color:#1F2933 !important;        /* ink */
+#header .header-nav-item.header-nav-item a:hover{
+  background-color:var(--wccc-sage);
+  color:var(--wccc-ink) !important;
 }
-.header-nav-item--active a{
-  background-color:#EEF3EA;        /* sage */
-  color:#0A5749 !important;        /* teal-deep */
+#header .header-nav-item--active.header-nav-item--active a{
+  background-color:var(--wccc-sage);
+  color:var(--wccc-teal-deep) !important;
 }
-/* Kill Squarespace's built-in nav underline so ONLY our pill shows.
-   The template draws it three ways (animated ::after + active text-decoration
-   + a background-image gradient); these selectors mirror Squarespace's own
-   specificity so they actually win. */
-.header-nav-item:not(.header-nav-item--folder) a::after{ display:none !important; }
-body:not(.header--menu-open) .header-nav-item--active > a:not(.header-nav-folder-title){
+/* Kill Squarespace's built-in nav underline (::after line + active
+   text-decoration + gradient). #header inserted for extra specificity;
+   !important kept because Squarespace uses !important here. */
+#header .header-nav-item:not(.header-nav-item--folder) a::after{ display:none !important; }
+body:not(.header--menu-open) #header .header-nav-item--active > a:not(.header-nav-folder-title){
   text-decoration:none !important;
   background-image:none !important;
 }
-/* Mobile overlay menu: highlight the current page (optional) */
-.header-menu-nav-item--active a{ color:#0A5749 !important; }
+/* Mobile overlay menu: current page */
+#header .header-menu-nav-item--active a{ color:var(--wccc-teal-deep) !important; }
 
-/* --- Button hover colors (Squarespace has no hover-color setting in its UI) ---
-   Primary (green) -> darker green; Secondary (blue) -> darker blue.
-   If hover doesn't change, right-click a button -> Inspect and confirm the
-   variant class; 7.1 uses .sqs-button-element--primary / --secondary / --tertiary. --- */
-.sqs-block-button-element,
-.sqs-button-element--primary,
-.sqs-button-element--secondary,
-.sqs-button-element--tertiary{
-  transition:background-color .18s ease, color .18s ease, border-color .18s ease;
-}
-.sqs-button-element--primary:hover,
-.sqs-block-button-element--primary:hover{
-  background-color:#0A5749 !important;   /* green-deep */
-  color:#ffffff !important;
-}
-.sqs-button-element--secondary:hover,
-.sqs-block-button-element--secondary:hover{
-  background-color:#0F4D77 !important;   /* blue-deep */
-  color:#ffffff !important;
-}
-.sqs-button-element--tertiary:hover,
-.sqs-block-button-element--tertiary:hover{
-  background-color:#EEF3EA !important;   /* sage */
-  color:#1F2933 !important;              /* ink */
-}
-
-/* --- Footer links: muted gray -> white + underline on hover (dark footer) ---
-   Squarespace 7.1 footer wrapper is #footer-sections. If your footer links
-   don't respond, inspect one and swap in the wrapper id/class you see. --- */
+/* --- Footer links: muted gray → white + underline on hover --- */
 #footer-sections a{
   color:#CFD7DD;
   text-decoration:none;
@@ -135,12 +123,12 @@ body:not(.header--menu-open) .header-nav-item--active > a:not(.header-nav-folder
 }
 
 /* --- Green check-mark bullets for page-content lists ---
-   Squarespace draws its rich-text bullet as a ::before (content:"•") on each
-   list item's FIRST CHILD, not as a list marker. So instead of adding our own
-   bullet (which caused a doubled "✓•"), we recolor Squarespace's bullet into a
-   green check. Scoped to #sections; leaves numbered lists and the footer alone. */
-#sections ul[data-rte-list] li > *:first-child::before{
+   Squarespace draws its rich-text bullet as a ::before (content:"•") on
+   each list item's first child. We recolor it into a green check rather
+   than adding a second bullet. High specificity (#page #sections + attr)
+   plus !important to override the "•". --- */
+#page #sections ul[data-rte-list] li > *:first-child::before{
   content:"\2713" !important;   /* ✓ */
-  color:#0E7363;                /* brand green */
+  color:var(--wccc-teal);
   font-weight:900;
 }
