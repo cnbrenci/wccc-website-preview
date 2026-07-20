@@ -1,0 +1,31 @@
+/* ============================================================
+   Variable Fraunces for headings (restores the ornate display "&"
+   and the elegant display letterforms that Squarespace's static
+   Fraunces cut can't produce).
+
+   ONE-TIME SETUP:
+   1. Get the font file: Fraunces-variable.woff2
+      (in this repo at assets/fonts/, or download it from
+       https://www.cassibrenci.dev/wccc-website-preview/assets/fonts/Fraunces-variable.woff2 )
+   2. In Squarespace: Website → Website Tools → Custom CSS →
+      "Manage Custom Files" → upload Fraunces-variable.woff2.
+   3. Click the uploaded file — Squarespace inserts its URL. Copy that
+      URL and paste it into src:url(...) below, replacing PASTE-URL-HERE.
+   4. Paste this whole block into Custom CSS (or into your custom-css.css).
+
+   Keep your heading WEIGHT setting in Site Styles — it still applies;
+   this only swaps in the variable font + turns optical sizing on.
+   ============================================================ */
+
+@font-face{
+  font-family:'FrauncesVF';
+  src:url(PASTE-URL-HERE) format('woff2');
+  font-weight:100 900;          /* variable weight range */
+  font-display:swap;
+}
+
+#page h1, #page h2, #page h3, #page h4{
+  font-family:'FrauncesVF', Georgia, 'Times New Roman', serif !important;
+  font-optical-sizing:auto;                    /* size-mapped opsz → ornate & on big headings */
+  font-variation-settings:"WONK" 0, "SOFT" 0;  /* non-wonky letterforms, matching the design */
+}
