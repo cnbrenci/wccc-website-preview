@@ -47,7 +47,7 @@
 }
 #page .sqs-button-element--secondary.sqs-button-element--secondary:hover,
 #page .sqs-block-button-element--secondary.sqs-block-button-element--secondary:hover{
-  background-color:var(--wccc-blue-deep) !important;  /* blue → deeper */
+  /*background-color:var(--wccc-blue-deep) !important;  /* blue → deeper */
   color:#fff !important;
 }
 #page .sqs-button-element--tertiary.sqs-button-element--tertiary:hover,

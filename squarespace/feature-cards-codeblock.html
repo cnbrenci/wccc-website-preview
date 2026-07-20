@@ -1,0 +1,53 @@
+<!-- ============================================================
+     WCCC feature cards (emoji tile + heading + text)
+     — Squarespace CODE BLOCK. Reusable on any page.
+
+     EDIT: for each card change the emoji, the tile color class
+     (tile-sage / tile-mist / tile-blush / tile-gold), the <h3>,
+     and the <p>. Add or remove <div class="fc-card"> blocks —
+     the row re-flows automatically (3 across → 1 on mobile).
+     ============================================================ -->
+<style>
+.wccc-cards{
+  --ink:#1F2933; --soft:#44515D; --line:#E6DED0;
+  font-family:'Nunito Sans',-apple-system,'Segoe UI',Roboto,sans-serif;
+  display:grid; gap:1.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  max-width:1080px; margin:0 auto;
+}
+.wccc-cards .fc-card{
+  background:#fff; border:1px solid var(--line); border-radius:20px;
+  padding:1.6rem 1.6rem 1.7rem; box-sizing:border-box;
+}
+.wccc-cards .fc-ico{
+  width:52px; height:52px; border-radius:14px;
+  display:grid; place-items:center; font-size:1.5rem; margin-bottom:1rem;
+}
+.wccc-cards .tile-sage { background:#EEF3EA; }
+.wccc-cards .tile-mist { background:#EAF1F5; }
+.wccc-cards .tile-blush{ background:#F7EEF0; }
+.wccc-cards .tile-gold { background:#FDF3D4; }
+.wccc-cards h3{
+  font-family:'Fraunces',Georgia,serif; font-weight:600; color:var(--ink);
+  font-size:1.35rem; line-height:1.15; margin:0 0 .35rem;
+}
+.wccc-cards p{ color:var(--soft); margin:0; font-size:1.0625rem; line-height:1.6; }
+</style>
+
+<div class="wccc-cards">
+  <div class="fc-card">
+    <div class="fc-ico tile-sage" aria-hidden="true">🕖</div>
+    <h3>Hours</h3>
+    <p>Monday–Friday, 7:30 am to 5:30 pm.</p>
+  </div>
+  <div class="fc-card">
+    <div class="fc-ico tile-blush" aria-hidden="true">✨</div>
+    <h3>Current openings</h3>
+    <p>We currently have openings for 2–5 year olds.</p>
+  </div>
+  <div class="fc-card">
+    <div class="fc-ico tile-mist" aria-hidden="true">👶</div>
+    <h3>Ages served</h3>
+    <p>Children from 8 weeks to 5 years old.</p>
+  </div>
+</div>
