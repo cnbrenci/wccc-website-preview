@@ -26,6 +26,6 @@
 
 #page h1, #page h2, #page h3, #page h4{
   font-family:'FrauncesVF', Georgia, 'Times New Roman', serif !important;
-  font-optical-sizing:auto;                    /* size-mapped opsz → ornate & on big headings */
-  font-variation-settings:"WONK" 0, "SOFT" 0;  /* non-wonky letterforms, matching the design */
+  font-optical-sizing:auto;
+  font-variation-settings:"WONK" 1, "SOFT" 0;  /* WONK 1 = the ornate "Et" ampersand (matches the static site) */
 }
