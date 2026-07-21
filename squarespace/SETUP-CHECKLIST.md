@@ -170,6 +170,18 @@ The whole homepage is prepared for you in **`homepage-codeblock.html`**. It pixe
 
 **Recommended:** interior pages native (Section 3) + homepage via **Option B** (`homepage-codeblock.html`). Use **Option A** instead only if staff will frequently rewrite the homepage themselves.
 
+### Option B-split — homepage as 4 code blocks (mix native + custom)
+If you want the **Welcome** and **Curriculum** sections built natively (so staff can edit them easily) and only the custom-looking parts as code, use these four self-contained Code blocks instead of the single file. Each is its own section; place them in this order with your native sections between:
+
+1. `home-1-hero-codeblock.html` — hero (top of page)
+2. *(your native **Welcome** section)*
+3. `home-2-promises-classrooms-codeblock.html` — stats ribbon + "Our promises" + Classrooms
+4. *(your native **Curriculum** section)*
+5. `home-3-testimonials-codeblock.html` — testimonials
+6. `home-4-cta-codeblock.html` — closing call-to-action
+
+Each block carries its own scoped CSS (`.wh`), so order/placement is flexible and they won't affect each other or the native sections.
+
 ---
 
 ## 6. Images to upload (from `assets/images/`)
